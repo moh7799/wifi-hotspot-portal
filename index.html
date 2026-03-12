@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4G Network | Login</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-theme="light">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"> Night mode</button>
+    
+    <div class="particles" id="particles"></div>
+
+    <main class="container">
+        <header class="logo-section">
+            <h1 class="logo">4G Network</h1>
+            <p class="tagline">High-speed · Stable connection · Wide coverage</p>
+            
+            <div class="advertisement" id="adBanner" tabindex="0" role="button">
+                <span class="ad-title">Special offer today only!</span>
+                <span class="ad-description">Unlimited 20 Mbps for the price of 5 Mbps</span>
+            </div>
+        </header>
+
+        <div class="status disconnected" id="connectionStatus">Disconnected</div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="speed">Select speed:</label>
+                <div class="speed-control">
+                    <select id="speed" name="speed">
+                        <option value="1">1 Mbps</option>
+                        <option value="2">2 Mbps</option>
+                        <option value="5">5 Mbps</option>
+                        <option value="10">10 Mbps</option>
+                        <option value="20">20 Mbps</option>
+                        <option value="unlimited">Unlimited</option>
+                    </select>
+                    <button type="button" class="btn btn-secondary btn-small" id="unlimitedToggle">Unlimited</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <div class="input-wrapper">
+                    <input type="text" id="username" name="username" placeholder="Enter username" required>
+                    <button type="button" class="password-btn" id="showHistoryBtn" aria-label="Show password history">History</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter password" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Log in</button>
+        </form>
+
+        <div class="support-buttons">
+            <a href="https://wa.me/444444444444" class="btn btn-secondary" target="_blank" rel="noopener">WhatsApp</a>
+            <button type="button" class="btn btn-secondary" id="smsBtn">SMS</button>
+            <button type="button" class="btn btn-secondary" id="callBtn">Call</button>
+        </div>
+
+        <nav class="links-section">
+            <h3>Important links</h3>
+            <div class="links-grid">
+                <div class="link-item">Rest area</div>
+                <div class="link-item">Matches</div>
+                <div class="link-item">Live stream</div>
+                <div class="link-item">Sales points</div>
+            </div>
+        </nav>
+    </main>
+
+    <!-- Password history modal -->
+    <div class="modal" id="passwordModal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModalBtn" aria-label="Close modal">×</button>
+            <header class="modal-header">
+                <h2>Password history</h2>
+                <p>Last login attempts</p>
+            </header>
+            <div id="historyContent" class="history-content">
+                <p class="empty-history">No records yet</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>
